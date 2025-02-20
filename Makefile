@@ -17,7 +17,9 @@ NAME = push_swap
 LIBFT = ./libft/libft.a
 OBJS_FOLD = obj
 
-SRCS = $(wildcard utils/*.c) push_swap.c
+SRCS = utils/a_b_rules.c utils/a_rules.c utils/b_rules.c utils/check_errors.c utils/list.c \
+		utils/sort.c utils/utils_1.c utils/utils_2.c push_swap.c
+
 OBJS = $(SRCS:%.c=$(OBJS_FOLD)/%.o)
 
 all: $(LIBFT) $(NAME)
