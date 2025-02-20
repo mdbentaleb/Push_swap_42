@@ -113,7 +113,7 @@ void	ft_sort(t_list **stack_a, t_list **stack_b, int size)
 	start = 0;
 	end = 15;
 	if (size > 100)
-		end = 30;
+		end = 35;
 	while (*stack_a)
 	{
 		if ((*stack_a)->index <= start)
