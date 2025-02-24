@@ -6,7 +6,7 @@
 /*   By: moben-ta <moben-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 18:35:37 by moben-ta          #+#    #+#             */
-/*   Updated: 2025/01/24 16:46:22 by moben-ta         ###   ########.fr       */
+/*   Updated: 2025/02/24 11:06:09 by moben-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,10 @@ void	ft_check_is_sorted(t_list **stack)
 		if (i == head->index)
 		{
 			if (head->next == NULL)
+			{
+				ft_free_stack(stack);
 				exit(0);
+			}
 			i++;
 		}
 		else
