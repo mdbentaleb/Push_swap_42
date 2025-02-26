@@ -6,7 +6,7 @@
 /*   By: moben-ta <moben-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:38:31 by moben-ta          #+#    #+#             */
-/*   Updated: 2025/01/28 15:38:33 by moben-ta         ###   ########.fr       */
+/*   Updated: 2025/02/26 12:33:52 by moben-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,10 @@ int	main(int arc, char **arv)
 	size = 0;
 	tab = ft_get_numbers(arc, arv, &size);
 	if (!tab || size == 1)
+	{
+		free (tab);
 		return (-1);
+	}
 	ft_init_stack(&stack_a, tab, size);
 	free(tab);
 	ft_check_is_sorted(&stack_a);
