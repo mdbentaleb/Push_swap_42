@@ -6,7 +6,7 @@
 /*   By: moben-ta <moben-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 11:22:57 by moben-ta          #+#    #+#             */
-/*   Updated: 2025/01/25 13:59:58 by moben-ta         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:34:24 by moben-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ char	*ft_merge_args(int argc, char **argv)
 	{
 		ft_check_errors(argv[i], merged);
 		temp = ft_strjoin(merged, argv[i]);
+		if (!temp)
+			return (free(merged), exit(1), NULL);
 		free(merged);
 		merged = temp;
 		if (i + 1 < argc)
@@ -92,6 +94,8 @@ char	**ft_extract_args(int argc, char **argv)
 
 	merged = ft_merge_args(argc, argv);
 	result = ft_split(merged, ' ');
+	if (!result)
+		return (free(merged), exit(1), NULL);
 	free(merged);
 	return (result);
 }

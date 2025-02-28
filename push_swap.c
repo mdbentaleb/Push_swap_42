@@ -6,7 +6,7 @@
 /*   By: moben-ta <moben-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:38:31 by moben-ta          #+#    #+#             */
-/*   Updated: 2025/02/26 12:33:52 by moben-ta         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:38:39 by moben-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_init_stack(t_list **stack, int *tab, int size)
 		new_node = ft_lstnew(tab[i]);
 		if (!new_node)
 		{
+			free(tab);
 			ft_free_stack(stack);
 			return ;
 		}
